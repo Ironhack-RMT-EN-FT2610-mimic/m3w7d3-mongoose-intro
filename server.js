@@ -1,4 +1,8 @@
-process.loadEnvFile()
+try {
+  process.loadEnvFile()
+} catch(error) {
+  console.warn("file .env not found. Using default values")
+}
 
 const express = require("express");
 const logger = require("morgan");
