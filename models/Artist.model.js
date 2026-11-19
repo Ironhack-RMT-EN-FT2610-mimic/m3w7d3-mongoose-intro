@@ -1,4 +1,4 @@
-const { Schema, model } = require("mongoose")
+const { Schema, model, ObjectId } = require("mongoose")
 
 // schema => what defines the format of the documets
 const artistSchema = new Schema({
@@ -22,6 +22,10 @@ const artistSchema = new Schema({
     type: [String],
     required: true,
     enum: ["rock", "pop", "punk", "grunge", "metal"]
+  },
+  favOtherArtist: {
+    type: ObjectId,
+    ref: "Artist"
   }
 })
 
